@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微信复制或跳转</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="copyButton">点击复制微信号</button>
+    <button id="openWeChatButton">打开微信</button>
+
+    <script>
+        document.getElementById('copyButton').onclick = function() {
+            const weChatID = '17315835120';
+            navigator.clipboard.writeText(weChatID).then(() => {
+                alert('微信号已复制: ' + weChatID);
+            });
+        };
+
+        document.getElementById('openWeChatButton').onclick = function() {
+            window.location.href = 'weixin://';
+        };
+    </script>
+</body>
+</html>
